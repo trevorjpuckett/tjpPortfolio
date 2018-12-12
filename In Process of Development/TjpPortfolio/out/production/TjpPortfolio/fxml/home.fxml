@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.web.WebView?>
+<BorderPane stylesheets="/css/main.css"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tjp.controllers.homeController"
+            fx:id="container">
+    <top>
+        <Label fx:id="title" text="Portfolio: Trevor J. Puckett" BorderPane.alignment="TOP_CENTER"></Label>
+    </top>
+    <center>
+        <WebView fx:id="resumeView" prefHeight="500" prefWidth="600"></WebView>
+
+    </center>
+    <left>
+        <VBox fx:id="consoleButtons">
+            <children>
+                <Label text="Console programs"></Label>
+                <Button text="Hangman" onAction="#handleHangman"></Button>
+                <Button text="Black Jack"></Button>
+                <Button text="Rainfall data"></Button>
+                <Button text="Rock Paper Scissors"></Button>
+            </children>
+        </VBox>
+    </left>
+     <right>
+         <VBox>
+             <children>
+                 <Label text="In progress GUI's"></Label>
+                 <VBox fx:id="exampleBox">
+                     <children>
+                         <Button text="Karaoke" onAction="#handleKaraoke"></Button>
+                         <Button text="Pomodoro" onAction="#handlePomodoro"></Button>
+                     </children>
+                 </VBox>
+                 <Label text="Completed GUI's"></Label>
+                 <VBox></VBox>
+             </children>
+         </VBox>
+
+     </right>
+
+
+
+</BorderPane>

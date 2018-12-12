@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.media.MediaView?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="container"
+            fx:controller="com.tjp.controllers.KaraokeControllers.karaokeFullScreenController"
+            stylesheets="/css/karaoke/karaokeFS.css"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <VBox>
+        <children>
+
+            <HBox fx:id="screen">
+                <MediaView fx:id="karaokeFullScreenView"></MediaView>
+                <VBox fx:id="videoControls">
+                    <children>
+                        <Button text="Play" onAction="#handlePlay"></Button>
+                        <Button text="Pause" onAction="#handlePause"></Button>
+                        <Button text="Restart" onAction="#handleRestart"></Button>
+                        <Button text="Exit" onAction="#handleExitFullScreen"></Button>
+                    </children>
+                </VBox>
+
+            </HBox>
+           <HBox fx:id="currentPerformance">
+               <children>
+                   <Label text="Current Singer: "></Label>
+                   <Label text="temp singer name"></Label>
+                   <Label text="Current Song: "></Label>
+                   <Label text="Temp placeholder"></Label>
+               </children>
+           </HBox>
+
+        </children>
+    </VBox>
+
+</AnchorPane>

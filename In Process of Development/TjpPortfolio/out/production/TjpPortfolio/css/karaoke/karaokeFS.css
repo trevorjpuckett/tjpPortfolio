@@ -1,0 +1,42 @@
+* {
+    -fx-font-family: 'Varela Round';
+    -fx-alignment: center;
+    -fx-text-fill: #fff;
+}
+
+#container {
+    -fx-background: #35B55C;
+    -fx-background-color: #202428;
+    -fx-pref-width: 500px;
+}
+
+#currentPerformance {
+    -fx-spacing: 45px;
+}
+
+#videoControls {
+    -fx-spacing: 45px;
+}
+
+#screen {
+    -fx-spacing: 25px;
+}
+
+.button {
+  -fx-border-radius: 6px;
+  -fx-border-width: 2px;
+  -fx-border-style: solid;
+  -fx-border-color: #fff;
+  -fx-background-color: none;
+  -fx-text-fill: #fff;
+  -fx-fill-width: true;
+  -fx-cursor: pointer;
+  -fx-padding: 10px 10px 10px 10px;
+  -fx-font-size: 20px;
+
+}
+
+.label {
+    -fx-text-fill: #fff;
+    -fx-font-size: 20px;
+}

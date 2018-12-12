@@ -1,0 +1,45 @@
+* {
+    -fx-font-family: 'Varela Round';
+    -fx-alignment: center;
+    -fx-text-fill: #fff;
+}
+
+#container {
+    -fx-background: #35B55C;
+    -fx-background-color: #202428;
+    -fx-pref-width: 500px;
+}
+
+#bannerLabel {
+    -fx-font-size: 50px;
+}
+
+#banner {
+    -fx-spacing: 45px;
+}
+
+#consoleContainer {
+    -fx-text-fill: #202428;
+}
+
+#consoleView {
+    -fx-text-fill: #202428;
+}
+
+#consoleUserSide {
+    -fx-text-fill: #202428;
+}
+
+.button {
+  -fx-border-radius: 6px;
+  -fx-border-width: 2px;
+  -fx-border-style: solid;
+  -fx-border-color: #fff;
+  -fx-background-color: none;
+  -fx-text-fill: #fff;
+  -fx-fill-width: true;
+  -fx-cursor: pointer;
+  -fx-padding: 10px 10px 10px 10px;
+  -fx-font-size: 20px;
+
+}
