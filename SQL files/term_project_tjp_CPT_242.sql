@@ -1,13 +1,13 @@
 -- ##########################################################################################################################
 -- #
--- # Created by: 						Trevor J. Puckett
+-- # Created by: 					Trevor J. Puckett
 -- # 
--- # Date due: 							12/12/2018
+-- # Date due: 						12/12/2018
 -- # 
--- # Project name: 						Term Project: Bookstore database design
+-- # Project name: 					Term Project: Bookstore database design
 -- #
 -- # Script purpose: 					create and populate a database for the operations and utilization
--- #                                    of a fabricated bookstore. 
+-- #                                    		of a fabricated bookstore. 
 -- #
 -- ###########################################################################################################################
 
@@ -25,9 +25,9 @@ USE Bookstore;
 -- # Create tables
 CREATE TABLE customers
 (
-customer_id 				INT				PRIMARY	KEY		AUTO_INCREMENT,
-first_name					VARCHAR(20)		NOT NULL,
-last_name					VARCHAR(25)		NOT NULL,
+customer_id 				INT			PRIMARY	KEY		AUTO_INCREMENT,
+first_name				VARCHAR(20)		NOT NULL,
+last_name				VARCHAR(25)		NOT NULL,
 customer_address			VARCHAR(30),
 customer_city				VARCHAR(20),
 customer_state				VARCHAR(2),
@@ -38,8 +38,8 @@ customer_email				VARCHAR(40)		NOT NULL		UNIQUE
 
 CREATE TABLE purchases
 (
-purchase_number 			INT				NOT NULL		PRIMARY	KEY		AUTO_INCREMENT,
-customer_id 				INT				NOT NULL,
+purchase_number 			INT			NOT NULL		PRIMARY	KEY		AUTO_INCREMENT,
+customer_id 				INT			NOT NULL,
 purchase_date 				DATE			NOT NULL,
 CONSTRAINT purchases_fk_customer
     FOREIGN KEY (customer_id)
@@ -48,20 +48,20 @@ CONSTRAINT purchases_fk_customer
 
 CREATE TABLE products
 (
-product_id 				INT 			NOT NULL 	PRIMARY KEY 	AUTO_INCREMENT,
-product_name 			VARCHAR(20) 	NOT NULL,
-product_description 	VARCHAR(500),
+product_id 			INT 			NOT NULL 	PRIMARY KEY 	AUTO_INCREMENT,
+product_name 			VARCHAR(20) 		NOT NULL,
+product_description 		VARCHAR(500),
 product_on_hand 		INT 			NOT NULL,
-product_unit_price 		DECIMAL(6,2) 	NOT NULL 
+product_unit_price 		DECIMAL(6,2) 		NOT NULL 
 );
 
 CREATE TABLE purchased_items
 (
-item_id 				INT 			NOT NULL 	PRIMARY KEY 	AUTO_INCREMENT,
+item_id 			INT 			NOT NULL 	PRIMARY KEY 	AUTO_INCREMENT,
 purchase_number 		INT 			NOT NULL,
-product_id 				INT 			NOT NULL,
+product_id 			INT 			NOT NULL,
 purchased_quantity 		INT 			NOT NULL,
-purchased_price 		DECIMAL(6,2) 	NOT NULL,
+purchased_price 		DECIMAL(6,2)	 	NOT NULL,
 CONSTRAINT purchases_fk_purchaseNumber
     FOREIGN KEY (purchase_number)
     REFERENCES purchases (purchase_number),
@@ -73,7 +73,7 @@ CONSTRAINT purchases_fk_productID
 CREATE TABLE courses
 (
 course_id 		VARCHAR(7) 		NOT NULL 	PRIMARY KEY,
-course_name 	VARCHAR(30) 	NOT NULL
+course_name 		VARCHAR(30)	 	NOT NULL
 );
 
 CREATE TABLE required_materials
@@ -102,11 +102,21 @@ INSERT INTO  customers VALUES
 ;	
 
 INSERT INTO products VALUES
-(default,'Required Book','This is your typical 25th edition book. Each year we change exactly 153 words to make it legally a new book. Then we make it manditory you all buy it and teach from it. We know the student body will most likely not even read it all the way through and google the answers to 90% of the homework. But hey.. What are your other options?',32,359.99),
-(default,'Best Pencils','This box includes 13 of the finest pencils our factory is willing to produce. We claim they are unbreakable, self-sharpening, and last 95% longer than all other brands. We all know it is not true but if you grab your handy-dandy electron microscrope our fine print states clearly in all bold that our crazy claims are only marketing rhetoric. Buy a pack of these and be better than your peers!',225,34.99),
-(default,'Graphing Calculator','The programming is from the 80s, and materials from the scrap yard, but it has a unique ability to do both too much and too little at the same time! Most of you know you can store notes and download scripts for it off the internet making it super easy to make a cheat sheet on it. Some say it is only useful in math but we are sure you will come up with a clever comeback when your history teacher asks why you need a graphing calculator during the exam!',8,289.99),
-(default,'16oz Drink','Let\'s not kid ourselve\'s, You have three options, buy your drink here, be late, or drink from that virus pump everyone calls a water fountain. Given these conditions we know we can buy a pack of this drink from down the street, put it in a cooler, and charge you a sweet 2500% mark up. Let\'s do business!',23,6.99),
-(default,'Junk Food','You don\'t need it, but the bacteria in your stomach & brain that feed off of fat and sugar won\'t let you say no, so go ahead and grab 15 because we are in short supply and there is a hungry line of bacterial drones right behind you!',18, 4.99)
+(default,	'Required Book',
+ 'This is your typical 25th edition book. Each year we change exactly 153 words to make it legally a new book. Then we make it manditory you all buy it and teach from it. We know the student body will most likely not even read it all the way through and google the answers to 90% of the homework. But hey.. What are your other options?',
+ 	32,359.99),
+(default,'Best Pencils',
+ 'This box includes 13 of the finest pencils our factory is willing to produce. We claim they are unbreakable, self-sharpening, and last 95% longer than all other brands. We all know it is not true but if you grab your handy-dandy electron microscrope our fine print states clearly in all bold that our crazy claims are only marketing rhetoric. Buy a pack of these and be better than your peers!',
+	 225,34.99),
+(default,	'Graphing Calculator',
+ 'The programming is from the 80s, and materials from the scrap yard, but it has a unique ability to do both too much and too little at the same time! Most of you know you can store notes and download scripts for it off the internet making it super easy to make a cheat sheet on it. Some say it is only useful in math but we are sure you will come up with a clever comeback when your history teacher asks why you need a graphing calculator during the exam!',
+	 8,289.99),
+(default,	'16oz Drink',
+ 'Let\'s not kid ourselve\'s, You have three options, buy your drink here, be late, or drink from that virus pump everyone calls a water fountain. Given these conditions we know we can buy a pack of this drink from down the street, put it in a cooler, and charge you a sweet 2500% mark up. Let\'s do business!',
+	 23,6.99),
+(default,	'Junk Food',
+ 'You don\'t need it, but the bacteria in your stomach & brain that feed off of fat and sugar won\'t let you say no, so go ahead and grab 15 because we are in short supply and there is a hungry line of bacterial drones right behind you!',
+ 	18, 4.99)
 ;
 
 INSERT INTO purchases VALUES
@@ -118,12 +128,12 @@ INSERT INTO purchases VALUES
 
 INSERT INTO purchased_items VALUES
 -- Primary Key		purchase number		product id		purchased quantity		purchased price
-(	default, 			1, 					1, 				4, 						1399.96),
-(	default, 			1, 					2, 				1, 						34.99),
-(	default, 			2, 					5, 				3, 						14.97),
-(	default, 			2, 					4, 				1, 						6.99),
-(	default, 			3, 					3, 				1, 						289.99),
-(	default, 			4, 					5, 				9, 						39.92)
+(	default, 		1, 		1, 				4, 				1399.96	),
+(	default, 		1, 		2, 				1, 				34.99	),
+(	default, 		2,		5, 				3, 				14.97	),
+(	default, 		2,		4, 				1,				6.99	),
+(	default, 		3,		3, 				1,				289.99	),
+(	default, 		4, 		5, 				9				39.92	)
 ;
 
 
@@ -136,16 +146,16 @@ INSERT INTO courses VALUES
 
 INSERT INTO required_materials VALUES
 -- course id		product id
-(	'M01',				1),
-(	'M01',				3),
-(	'E01',				1),
-(	'E01',				2),
-(	'H01',				1),
-(	'H01',				3),
-(	'H01',				4),
-(	'H01',				5),
-(	'S01',				4),
-(	'S01',				5)
+(	'M01',			1),
+(	'M01',			3),
+(	'E01',			1),
+(	'E01',			2),
+(	'H01',			1),
+(	'H01',			3),
+(	'H01',			4),
+(	'H01',			5),
+(	'S01',			4),
+(	'S01',			5)
 ;
 -- # Create table views.
 	
@@ -187,7 +197,8 @@ CREATE VIEW number_of_purchases AS
     SELECT first_name, last_name, COUNT(purchase_number) AS purchases
     FROM customers cm2 RIGHT JOIN purchases pc2
 		ON cm2.customer_id = pc2.customer_id
-	GROUP BY cm2.customer_id;     
+	GROUP BY cm2.customer_id;    
+	
 -- # Testing Queries
 
 -- select * from customers;
