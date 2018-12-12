@@ -1,21 +1,21 @@
 -- ##########################################################################################################################
 -- #
--- # Created by: 						Trevor J. Puckett
+-- # Created by: 			Trevor J. Puckett
 -- # 
--- # Date created: 						12/12/2018
+-- # Date created: 			12/12/2018
 -- # 
--- # Project name: 						Hangman Database
+-- # Project name: 			Hangman Database
 -- #
--- # Script purpose: 					create and populate a database for the operations and utilization
+-- # Script purpose: 			create and populate a database for the operations and utilization
 -- #                                    of a hangman application where the user will be able to	draw 
--- # 									from multiple word pools:
--- #										1) Developer entered words only
--- #										2) User entered words only
--- #										3) Developer & User entered words
--- #										4) Phrases randomly generated from developer words
--- #										5) Phrases randomly generated from user words
--- #										6) Phrases randomly generated from developer & user words
--- #										7) User entered phrases										 
+-- # 						from multiple word pools:
+-- #							1) Developer entered words only
+-- #							2) User entered words only
+-- #							3) Developer & User entered words
+-- #							4) Phrases randomly generated from developer words
+-- #							5) Phrases randomly generated from user words
+-- #							6) Phrases randomly generated from developer & user words
+-- #							7) User entered phrases										 
 -- #
 -- ###########################################################################################################################
 
@@ -33,17 +33,17 @@ USE Hangman;
 CREATE TABLE users
 (
 user_id 			INT 			NOT NULL 	PRIMARY KEY 	AUTO_INCREMENT,
-user_name 			VARCHAR(13) 	NOT NULL	UNIQUE,
-user_password 		VARCHAR(21) 	NOT NULL,
-user_date_created 	DATE 			NOT NULL,
+user_name 			VARCHAR(13) 		NOT NULL	UNIQUE,
+user_password 			VARCHAR(21)	 	NOT NULL,
+user_date_created 		DATE 			NOT NULL,
 user_bio 			VARCHAR(200)
 );
 
 CREATE TABLE words
 (
 word_id				INT 			NOT NULL 	PRIMARY KEY 	AUTO_INCREMENT,
-word				VARCHAR(45) 	NOT NULL,
-word_creator_id 	INT 			NOT NULL,
+word				VARCHAR(45)	 	NOT NULL,
+word_creator_id 		INT 			NOT NULL,
 CONSTRAINT words_fk_wordCreatorId
 	FOREIGN KEY (word_creator_id)
     REFERENCES users (user_id)
@@ -59,13 +59,13 @@ CONSTRAINT statistics_fk_wordId
     REFERENCES words (word_id)
 );
 
--- # populate tables 
+-- # populate tables for testing purposes
 
 INSERT INTO users VALUES
 -- user_id		user_name		user_password		user_date_created		user_bio
-( default,		'developer',	'$131%32^10devel',	'2018-12-12',			'' 				),
+( default,		'developer',		'$131%32^10devel',	'2018-12-12',			'' 		),
 ( default,		'user1',		'genericpassword',	'2018-12-12',			'this is user1' ),
-( default,		'user2',		'password',			'2018-12-12',			'this is user2' ),
+( default,		'user2',		'password',		'2018-12-12',			'this is user2' ),
 ( default,		'usere3',		'newpassword',		'2018-12-11',			'this is user3' )
 ;
 INSERT INTO words VALUES
@@ -83,7 +83,7 @@ INSERT INTO words VALUES
 (default,	'rofl',				2),
 (default,	'smh',				2),
 (default,	'pooki',			3),
-(default,	'snugglemuffin',	3),
+(default,	'snugglemuffin',		3),
 (default,	'snubby',			3)
 ;
 
