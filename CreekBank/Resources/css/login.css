@@ -1,0 +1,65 @@
+* {
+    -fx-font-family: 'Varela Round';
+    -fx-alignment: center;
+    -fx-text-fill: #fff;
+}
+
+#container {
+    -fx-background: #35B55C;
+    -fx-background-color: #202428;
+    -fx-pref-width: 500px;
+}
+
+#usernamePrompt {
+    -fx-text-fill: #202428;
+}
+
+#passwordPrompt {
+    -fx-text-fill: #202428;
+}
+
+#loginBox {
+    -fx-spacing: 25px;
+}
+
+#buttonBox {
+    -fx-spacing: 25px;
+}
+
+#usernameBox {
+    -fx-spacing: 25px;
+}
+
+#passwordBox {
+    -fx-spacing: 25px;
+}
+
+#usernameVerificationStatus {
+    -fx-text-fill: #DC143C;
+}
+
+#passwordVerificationStatus {
+    -fx-text-fill: #DC143C;
+}
+
+#welcomeLabel {
+    -fx-font-size: 75px;
+}
+
+#bannerBox {
+    -fx-spacing: 55px;
+}
+
+.button {
+  -fx-border-radius: 10px;
+  -fx-border-width: 2px;
+  -fx-border-style: solid;
+  -fx-border-color: #fff;
+  -fx-background-color: none;
+  -fx-text-fill: #fff;
+  -fx-fill-width: true;
+  -fx-cursor: pointer;
+  -fx-padding: 10px 10px 10px 10px;
+  -fx-font-size: 20px;
+
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane stylesheets="/css/homeScreen/teacherHome.css"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tjp.controllers.homeControllers.TeacherHomeController"
+            prefHeight="400.0" prefWidth="600.0"
+            fx:id="container">
+
+    <top>
+        <VBox>
+            <children>
+                <Button fx:id="logoutButton" text="Log Out" onAction="#handleLogOut"></Button>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <Label fx:id="loginSuccessLabel" text="Teacher Login Successful!"></Label>
+    </center>
+
+
+
+</BorderPane>
